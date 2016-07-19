@@ -8,7 +8,7 @@ db = mysql.createConnection({
   host  : 'localhost',
   user  : 'root',
   password : '',
-  database : 'challenge'
+  database : ''
 });
 
 db.connect();
@@ -19,4 +19,4 @@ app.listen(3000, function () {
 
 
 app.get('/city/', city.index);
-app.get('/city/:name', city.list);
+app.get('/city/:name', city.autocomplete);

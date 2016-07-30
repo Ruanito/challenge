@@ -17,6 +17,7 @@ app.listen(3000, function () {
   console.log('Server running on port:3000');
 });
 
+app.use('/', express.static('app'));
 
 app.get('/city/', city.index);
 app.get('/city/:name', city.autocomplete);

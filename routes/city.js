@@ -1,5 +1,5 @@
 exports.index = function(req, res){
-  db.query("SELECT * FROM cities LIMIT 10", function(err, rows){
+  db.query("SELECT city FROM cities LIMIT 10", function(err, rows){
     if(err)
       throw err;
     res.send(rows);
@@ -7,7 +7,7 @@ exports.index = function(req, res){
 }
 
 exports.autocomplete = function(req, res){
-  db.query("SELECT city FROM cities WHERE cities LIKE '" + req.params.name + "%' LIMIT 10", function(err, rows){
+  db.query("SELECT city FROM cities WHERE city LIKE '" + req.params.name + "%' LIMIT 10", function(err, rows){
     if(err)
       throw err;
     res.send(rows);

@@ -19,6 +19,7 @@ How do I confirm that my changes do not break production?
 How do I test these changes in my codebase?
 
 How would you model this change?
+
 Create a new table Rule and store the state and product_id. When I search for products, I remove those that are not offered in the state.
 Create a new method in the Product model called offered_by_state(state) that returns the list of products.
 
@@ -40,9 +41,8 @@ Can I use a cache?
 
 How can I query this information from the database?
 
-
-
 How would you model this change?
+
 I added two columns in the Rule table, rule_type and minimum_age. In rule_type, I store NOT_OFFERED or MINIMUM_AGE, and in minimum_age, I store the age as an integer.
 
 Create a new method in the Product model called offered_by_state_with_minimum_age(state, age)
